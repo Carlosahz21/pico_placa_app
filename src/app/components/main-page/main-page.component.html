@@ -1,0 +1,67 @@
+<div fxLayout="row" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+    <div class="center" fxFlex="20">
+        <div fxFlexFill fxLayoutAlign="center center">
+            <h3>Pico y Placa App</h3>
+        </div>
+        <form [formGroup]="picoPlacaFormGroup">
+
+            <mat-form-field class="field " appearance="fill">
+                <mat-label>License Plate Number</mat-label>
+                <input name="plateNumber" formControlName="plateNumber" matInput placeholder="PBX-1234"
+                    [pattern]="unamePattern" />
+                <mat-error *ngIf="picoPlacaFormGroup.get('plateNumber')!.errors?.pattern">
+                    Please enter a valid license plate number
+                </mat-error>
+                <mat-error *ngIf="picoPlacaFormGroup.get('plateNumber')!.errors?.['required']">
+                    the license plateNumber number is required
+                </mat-error>
+                <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+
+            <br />
+
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="currentDate" />
+                <mat-error *ngIf="picoPlacaFormGroup.get('currentDate')!.errors?.['required']">
+                    the date is required
+                </mat-error>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matSuffix [for]="picker">
+                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <br />
+
+            <mat-form-field class="field" appearance="fill">
+                <input name="time" formControlName="time" matInput type="time" />
+                <mat-error *ngIf="picoPlacaFormGroup.get('time')!.errors?.['required']">
+                    the time is required
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <br>
+
+            <ng-container *ngIf="picoPlacaFormGroup.status == 'VALID' && picoPlaca">
+                <mat-card fxFlexFill fxLayoutAlign="space-between" fxFlexFill>
+                    <div>
+                        <mat-card-title>Result</mat-card-title>
+                        <mat-card-subtitle>You have Pico y Placa !!</mat-card-subtitle>
+                    </div>
+                    <img mat-card-sm-image
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjwqNBVuQEjkLmE0rYYJvENC_o8vQkX3OFRshcW-T-4rkZnnKZAOYF4Rnbsvnd5YsPvY&usqp=CAU">
+                </mat-card>
+            </ng-container>
+
+            <!-- TOMOROW -->
+            <!-- <div *ngIf="condition; else elseBlock">Content to render when condition is true.</div>
+            <ng-template #elseBlock>Content to render when condition is false.</ng-template> -->
+
+            
+            <br>
+            <button mat-raised-button class="field" color="primary" (click)="predict()">Predict</button>
+        </form>
+    </div>
+</div>
