@@ -1,0 +1,22 @@
+<ng-container *ngIf="picoPlacaFormGroup.status == 'VALID' && picoPlaca">
+    <div *ngIf="isPicoPlaca; else elseBlock">
+        <mat-card fxFlexFill fxLayoutAlign="space-between" fxFlexFill>
+            <div>
+                <mat-card-title>Result</mat-card-title>
+                <mat-card-subtitle>You have !Pico y Placa¡</mat-card-subtitle>
+            </div>
+            <img mat-card-sm-image
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjwqNBVuQEjkLmE0rYYJvENC_o8vQkX3OFRshcW-T-4rkZnnKZAOYF4Rnbsvnd5YsPvY&usqp=CAU">
+        </mat-card>
+    </div> 
+    <ng-template #elseBlock>
+        <mat-card fxFlexFill fxLayoutAlign="space-between" fxFlexFill>
+            <div>
+                <mat-card-title>Result</mat-card-title>
+                <mat-card-subtitle>You can drive with no problem</mat-card-subtitle>
+            </div>
+            <img mat-card-sm-image
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQab5QXaIukou0ZKQ4HnFtgecQ2HAiSEQaYxoMj4yl3T7IU6t1Nbwy6h3FC_Oq51LDcLow&usqp=CAU">
+        </mat-card>
+    </ng-template> 
+</ng-container>

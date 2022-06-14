@@ -1,0 +1,10 @@
+<ng-container [formGroup]="formGroup">
+    <mat-form-field class="field" appearance="fill">
+        <input name="time" formControlName="time" matInput type="time" />
+        <mat-error *ngIf="formGroup.get('time')!.errors?.['required']">
+            the time is required
+        </mat-error>
+    </mat-form-field>
+</ng-container>
+<br>
+<br>

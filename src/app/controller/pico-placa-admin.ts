@@ -45,8 +45,17 @@ export class PicoPlacaAdmin {
      * @example inRange("16:00") => should return true
      */
     public inRange(time: string): boolean {
+        let currentTime: Number = Date.parse("01/01/2000 " + time); /* 01/01/2000 is an arbitrary date only used for time comparison.*/
+
+        //set interval limits
+        let interval1Min: Number = Date.parse("01/01/2000 7:00:00");
+        let interval1Max: Number = Date.parse("01/01/2000 9:30:00");
+        let interval2Min: Number = Date.parse("01/01/2000 16:00:00");
+        let interval2Max: Number = Date.parse("01/01/2000 19:30:00");
+
         let flag = false;
-        if (time >= "7:00:00" && time <= "9:30:00" || time >= "16:00:00" && time <= "19:30:00") {
+        if (currentTime > interval1Min && currentTime < interval1Max ||
+            currentTime > interval2Min && currentTime < interval2Max) {
             flag = true;
         }
         return flag;

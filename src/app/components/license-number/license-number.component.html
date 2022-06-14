@@ -1,0 +1,15 @@
+<ng-container [formGroup]="formGroup">
+    <mat-form-field class="field " appearance="fill">
+        <mat-label>License Plate Number</mat-label>
+        <input name="plateNumber" formControlName="plateNumber" matInput placeholder="PBX-1234"
+            [pattern]="unamePattern" />
+        <mat-error *ngIf="formGroup.get('plateNumber')!.errors?.pattern">
+            Please enter a valid license plate number
+        </mat-error>
+        <mat-error *ngIf="formGroup.get('plateNumber')!.errors?.['required']">
+            the license plateNumber number is required
+        </mat-error>
+        <mat-icon matSuffix>mode_edit</mat-icon>
+    </mat-form-field>
+</ng-container>
+<br />
