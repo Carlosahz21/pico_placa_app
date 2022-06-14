@@ -1,15 +1,14 @@
 import { IPicoPlaca } from '../interfaces/pico-placa';
 
-
 export class PicoPlaca implements IPicoPlaca {
     private _licensePlate: string;
     private _date: Date;
     private _time: string;
 
     constructor() {
-        this._licensePlate = "";
+        this._licensePlate = '';
         this._date = new Date();
-        this._time = ""
+        this._time = ''
     }
 
     public get licensePlate(): string {
