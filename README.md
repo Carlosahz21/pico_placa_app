@@ -6,7 +6,7 @@ App to predict the "pico y placa" using license plate number, date and time of d
 
 ## Demo
 
-[Pico y Placa App](https://fascinating-halva-5cf605.netlify./)
+[Pico y Placa App](https://fascinating-halva-5cf605.netlify.app/)
 ## Install dependencies
 
 `npm install`
