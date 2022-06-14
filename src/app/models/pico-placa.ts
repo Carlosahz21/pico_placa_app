@@ -5,10 +5,13 @@ export class PicoPlaca implements IPicoPlaca {
     private _date: Date;
     private _time: string;
 
-    constructor() {
-        this._licensePlate = '';
-        this._date = new Date();
-        this._time = ''
+    constructor(
+        licensePlate: string,
+        date: Date,
+        time: string) {
+        this._licensePlate = licensePlate;
+        this._date = date;
+        this._time = time
     }
 
     public get licensePlate(): string {
