@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LicenseNumberComponent } from './license-number.component';
+import { Component } from '@angular/core';
 
 describe('LicenseNumberComponent', () => {
   let component: LicenseNumberComponent;
@@ -17,9 +18,5 @@ describe('LicenseNumberComponent', () => {
     fixture = TestBed.createComponent(LicenseNumberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

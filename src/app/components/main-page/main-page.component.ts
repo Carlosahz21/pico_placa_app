@@ -10,7 +10,6 @@ import { PicoPlacaAdmin } from '../../controller/pico-placa-admin';
 export class MainPageComponent {
 
   picoPlaca!: PicoPlaca;
-  unamePattern: string = "[A-Z]{3}(-)[0-9]{4}";
   adm: PicoPlacaAdmin = new PicoPlacaAdmin();
   isPicoPlaca: boolean = false;
 
@@ -22,6 +21,7 @@ export class MainPageComponent {
   });
 
   predict() {
+    let flag: boolean = false;
     if (this.picoPlacaFormGroup.status == 'VALID') {
       this.picoPlaca = new PicoPlaca(this.picoPlacaFormGroup.get('plateNumber')?.value!,
         this.picoPlacaFormGroup.get('currentDate')?.value!,
@@ -29,8 +29,5 @@ export class MainPageComponent {
 
       this.isPicoPlaca = this.adm.validatePicoPlaca(this.picoPlaca);
     }
-
-    console.log(this.picoPlaca);
-    console.log(this.picoPlacaFormGroup);
   }
 }
